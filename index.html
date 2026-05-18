@@ -3,125 +3,281 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Тойға шақыру</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-body{
+*{
 margin:0;
-font-family:Arial,sans-serif;
-background:#f8f3ea;
-text-align:center;
-color:#5a4320;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Cormorant Garamond',serif;
+background:linear-gradient(to bottom,#fffdf8,#f4e8d0);
+color:#4b3823;
 overflow-x:hidden;
 }
 
 .hero{
 height:100vh;
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
+flex-direction:column;
+text-align:center;
 padding:20px;
-background:linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.5)),
-url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200');
+background:
+linear-gradient(rgba(255,248,235,.55),rgba(255,248,235,.75)),
+url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1400');
 background-size:cover;
 background-position:center;
+position:relative;
 }
 
-h1{
-font-size:55px;
-color:#b58a3a;
+.ornament{
+font-size:28px;
+color:#b68b3d;
+letter-spacing:6px;
+}
+
+.names{
+font-family:'Great Vibes',cursive;
+font-size:82px;
+color:#b68b3d;
+margin-top:20px;
 }
 
 .subtitle{
-font-size:24px;
-max-width:330px;
-line-height:1.5;
+font-size:28px;
+margin-top:15px;
+max-width:360px;
+line-height:1.7;
 }
 
-.button{
+.open-btn{
 display:inline-block;
-margin-top:25px;
-padding:15px 35px;
-background:#b58a3a;
+margin-top:35px;
+padding:18px 38px;
+background:linear-gradient(to right,#c89f55,#b68b3d);
 color:white;
 text-decoration:none;
-border-radius:40px;
-font-size:22px;
+border-radius:50px;
+font-size:24px;
+box-shadow:0 10px 30px rgba(182,139,61,.35);
+}
+
+.scroll{
+position:absolute;
+bottom:25px;
+font-size:40px;
+color:#b68b3d;
+animation:bounce 2s infinite;
 }
 
 .section{
-padding:80px 20px;
+padding:100px 20px;
+text-align:center;
+}
+
+.title{
+font-size:58px;
+color:#b68b3d;
+margin-bottom:20px;
+}
+
+.text{
+font-size:29px;
+line-height:1.8;
+max-width:850px;
+margin:auto;
+}
+
+.photo{
+width:92%;
+max-width:420px;
+border-radius:35px;
+margin-top:40px;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
 }
 
 .card{
 background:white;
-padding:30px;
-border-radius:30px;
-max-width:350px;
-margin:auto;
-box-shadow:0 5px 25px rgba(0,0,0,.1);
+padding:35px;
+border-radius:40px;
+max-width:380px;
+margin:40px auto;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
 }
 
 .timer{
-font-size:28px;
+font-size:34px;
+color:#b68b3d;
 margin-top:20px;
-color:#b58a3a;
 font-weight:bold;
 }
 
-.photo{
-width:90%;
-max-width:350px;
-border-radius:25px;
-margin-top:25px;
+.info{
+font-size:28px;
+line-height:2;
+margin-top:20px;
 }
 
-.music{
+.music-btn{
 position:fixed;
 top:20px;
 right:20px;
-border:none;
-background:#b58a3a;
+background:#b68b3d;
 color:white;
-padding:12px 18px;
-border-radius:30px;
+border:none;
+padding:14px 18px;
+border-radius:50px;
 font-size:18px;
+z-index:1000;
+}
+
+.fade{
+opacity:0;
+transform:translateY(50px);
+transition:1.2s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(10px);}
 }
 </style>
 </head>
 
 <body>
 
-<button class="music" onclick="toggleMusic()">🎵 Музыка</button>
+<button class="music-btn" onclick="toggleMusic()">
+🎵 Әуен
+</button>
 
 <section class="hero">
-<h1>Ахмад & Амина</h1>
+
+<div class="ornament">
+✦ ҚАЗАҚЫ ТОЙ ✦
+</div>
+
+<div class="names">
+Ахмад & Амина
+</div>
+
 <p class="subtitle">
 Сіздерді біздің қуанышымызға ортақ болуға шақырамыз ✨
 </p>
 
-<a href="#invite" class="button">
+<a href="#invite" class="open-btn">
 Шақыруды ашу
 </a>
+
+<div class="scroll">
+⌄
+</div>
+
 </section>
 
-<section class="section" id="invite">
+<section class="section fade" id="invite">
+
+<h2 class="title">
+Құрметті қонақтар
+</h2>
+
+<p class="text">
+Сіздерді ерекше қуанышымыздың куәсі болуға шын жүректен шақырамыз. Бұл күн біз үшін өте маңызды 🤍
+</p>
+
+<img class="photo"
+src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=1400">
 
 <div class="card">
-<h2>Той уақыты</h2>
+
+<h2 class="title">
+Той уақыты
+</h2>
 
 <div id="timer" class="timer"></div>
 
-<p>
+<div class="info">
 📅 25 Тамыз 2026<br>
 🕐 18:00<br>
 📍 Алматы
-</p>
 </div>
 
+</div>
+
+</section><section class="section fade">
+
+<h2 class="title">
+Біздің қуанышымыз
+</h2>
+
+<p class="text">
+Бұл күн — жүрегіміздегі ең ерекше сәттердің бірі.
+Сіздердің келгендеріңіз біздің қуанышымызды еселей түседі ✨
+</p>
+
 <img class="photo"
-src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=1200">
+src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1400">
+
+</section>
+
+<section class="section fade">
+
+<h2 class="title">
+Той өтетін орын
+</h2>
+
+<p class="text">
+«Grand Hall» мейрамханасы<br>
+Алматы қаласы
+</p>
+
+<div style="margin-top:35px;">
+<iframe
+src="https://maps.google.com/maps?q=Almaty&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="92%"
+height="320"
+style="border:0;border-radius:35px;box-shadow:0 10px 35px rgba(0,0,0,.15);">
+</iframe>
+</div>
+
+</section>
+
+<section class="section fade">
+
+<h2 class="title">
+Қатысатыныңызды растаңыз
+</h2>
+
+<p class="text">
+Сізді асыға күтеміз 💛
+</p>
+
+<a href="https://wa.me/77000000000"
+style="
+display:inline-block;
+margin-top:25px;
+padding:18px 38px;
+background:#25D366;
+color:white;
+text-decoration:none;
+font-size:24px;
+border-radius:50px;
+box-shadow:0 10px 30px rgba(37,211,102,.25);">
+WhatsApp арқылы жазу
+</a>
 
 </section>
 
@@ -155,6 +311,25 @@ music.play();
 music.pause();
 }
 }
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".fade").forEach(el=>{
+observer.observe(el);
+});
+
+setInterval(()=>{
+window.scrollBy({
+top:window.innerHeight,
+behavior:"smooth"
+});
+},7000);
 </script>
 
 </body>
