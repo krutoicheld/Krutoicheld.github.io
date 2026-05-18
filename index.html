@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="kk">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Тойға шақыру</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -17,10 +17,10 @@ scroll-behavior:smooth;
 }
 
 body{
-font-family:'Marcellus',serif;
-background:linear-gradient(to bottom,#fffdf8,#f5e7cf);
+font-family:'Cormorant Garamond', serif;
+background:#faf6ef;
 overflow-x:hidden;
-color:#3b2c1c;
+color:#3a2d1f;
 }
 
 .hero{
@@ -28,44 +28,71 @@ height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-flex-direction:column;
 text-align:center;
+flex-direction:column;
 padding:20px;
 position:relative;
 background:
-linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.6)),
-url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200');
+linear-gradient(rgba(255,248,235,.45),rgba(255,248,235,.65)),
+url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1400');
 background-size:cover;
 background-position:center;
 }
 
-.pattern{
-font-size:28px;
-color:#c8a45d;
-margin-bottom:15px;
+.hero::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+backdrop-filter:blur(2px);
 }
 
-h1{
-font-size:58px;
-color:#b8892d;
+.content{
+position:relative;
+z-index:2;
+animation:fadeUp 2s ease;
+}
+
+.pattern{
+font-size:28px;
+color:#b78d47;
+letter-spacing:4px;
+}
+
+.main-title{
+font-family:'Great Vibes', cursive;
+font-size:78px;
+color:#af823c;
+margin-top:20px;
 }
 
 .subtitle{
-font-size:24px;
-max-width:330px;
-margin-top:15px;
-line-height:1.6;
+font-size:28px;
+margin-top:20px;
+max-width:350px;
+line-height:1.7;
 }
 
 .open-btn{
-margin-top:30px;
-padding:16px 36px;
-background:#c8a45d;
-border-radius:50px;
-text-decoration:none;
-font-size:22px;
+display:inline-block;
+margin-top:35px;
+padding:18px 42px;
+background:linear-gradient(to right,#c8a15a,#a67c37);
 color:white;
-box-shadow:0 10px 25px rgba(0,0,0,.12);
+text-decoration:none;
+border-radius:60px;
+font-size:24px;
+box-shadow:0 10px 35px rgba(183,141,71,.35);
+}
+
+.scroll{
+position:absolute;
+bottom:25px;
+font-size:38px;
+color:#af823c;
+animation:bounce 2s infinite;
 }
 
 .section{
@@ -74,53 +101,52 @@ text-align:center;
 }
 
 .title{
-font-size:48px;
-color:#b8892d;
+font-size:58px;
+color:#af823c;
 margin-bottom:20px;
 }
 
 .text{
-font-size:25px;
-line-height:1.8;
+font-size:28px;
+line-height:1.9;
 max-width:800px;
 margin:auto;
 }
 
 .card{
-background:rgba(255,255,255,.75);
-backdrop-filter:blur(10px);
-padding:30px;
-border-radius:35px;
-max-width:360px;
-margin:35px auto;
-box-shadow:0 10px 40px rgba(0,0,0,.08);
+background:white;
+padding:35px;
+border-radius:40px;
+max-width:370px;
+margin:40px auto;
+box-shadow:0 15px 45px rgba(0,0,0,.08);
 }
 
 .photo{
 width:92%;
-max-width:350px;
-border-radius:30px;
+max-width:380px;
+border-radius:35px;
 margin-top:35px;
-box-shadow:0 10px 35px rgba(0,0,0,.15);
+box-shadow:0 15px 45px rgba(0,0,0,.15);
 }
 
 .timer{
-font-size:32px;
+font-size:34px;
+color:#af823c;
 margin-top:20px;
-color:#b8892d;
 font-weight:bold;
 }
 
 .info{
-font-size:25px;
+font-size:28px;
 line-height:2;
-margin-top:15px;
+margin-top:20px;
 }
 
 .fade{
 opacity:0;
-transform:translateY(40px);
-transition:1s;
+transform:translateY(60px);
+transition:1.2s;
 }
 
 .fade.show{
@@ -132,21 +158,25 @@ transform:translateY(0);
 position:fixed;
 top:20px;
 right:20px;
-background:#c8a45d;
-border:none;
-border-radius:50px;
-padding:14px 18px;
-font-size:18px;
+z-index:999;
+background:#b78d47;
 color:white;
-z-index:1000;
+border:none;
+padding:14px 18px;
+border-radius:50px;
+font-size:18px;
+box-shadow:0 8px 25px rgba(0,0,0,.15);
 }
 
-.scroll-down{
-position:absolute;
-bottom:30px;
-font-size:35px;
-animation:bounce 2s infinite;
-color:#c8a45d;
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 @keyframes bounce{
@@ -159,26 +189,32 @@ color:#c8a45d;
 <body>
 
 <button class="music-btn" onclick="toggleMusic()">
-🎵 Музыка
+🎵 Әуен
 </button>
 
 <section class="hero">
 
+<div class="content">
+
 <div class="pattern">
-✦ Қазақы той ✦
+✦ ҚАЗАҚЫ ТОЙ ✦
 </div>
 
-<h1>Ахмад & Амина</h1>
+<h1 class="main-title">
+Ахмад & Амина
+</h1>
 
 <p class="subtitle">
-Қуанышымыздың куәсі болуға шақырамыз ✨
+Сіздерді біздің қуанышымызға ортақ болуға шақырамыз ✨
 </p>
 
 <a href="#invite" class="open-btn">
 Шақыруды ашу
 </a>
 
-<div class="scroll-down">
+</div>
+
+<div class="scroll">
 ⌄
 </div>
 
@@ -191,17 +227,16 @@ color:#c8a45d;
 </h2>
 
 <p class="text">
-Сіздерді біздің қуанышымызға ортақ болуға шын жүректен шақырамыз.
-Бұл күн біз үшін ерекше ❤️
+Біздің өміріміздегі ерекше күннің куәсі болуға шақырамыз. Сіздердің келгендеріңіз біз үшін үлкен қуаныш болады 🤍
 </p>
 
 <img class="photo"
-src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=1200">
+src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=1400">
 
 <div class="card">
 
 <h2 class="title">
-Той уақыты
+Той күні
 </h2>
 
 <div class="timer" id="timer"></div>
@@ -224,12 +259,13 @@ src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=1200">
 Алматы қаласы
 </p>
 
-<div style="margin-top:30px;">
+<div style="margin-top:35px;">
 <iframe
 src="https://maps.google.com/maps?q=Almaty&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="90%"
+width="92%"
 height="320"
-style="border:0;border-radius:30px;box-shadow:0 10px 30px rgba(0,0,0,.15);">
+style="border:0;border-radius:35px;
+box-shadow:0 12px 35px rgba(0,0,0,.12);">
 </iframe>
 </div>
 
@@ -238,13 +274,42 @@ style="border:0;border-radius:30px;box-shadow:0 10px 30px rgba(0,0,0,.15);">
 <section class="section fade">
 
 <h2 class="title">
-Біз сіздерді күтеміз ✨
+Естелік сәттер ✨
 </h2>
 
 <p class="text">
-Бұл күн біздің жүрегімізде мәңгі сақталады.
-Сізбен бірге болғаны біз үшін үлкен қуаныш 🤍
+Бұл күн жүрегімізде мәңгі сақталады.
+Сізбен бірге болғанымызға қуаныштымыз 🤍
 </p>
+
+<img class="photo"
+src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1400">
+
+</section>
+
+<section class="section fade">
+
+<h2 class="title">
+Қатысатыныңызды растаңыз
+</h2>
+
+<p class="text">
+Сізді асыға күтеміз 💛
+</p>
+
+<a href="https://wa.me/77000000000"
+style="
+display:inline-block;
+margin-top:25px;
+padding:18px 36px;
+background:#25D366;
+color:white;
+text-decoration:none;
+font-size:24px;
+border-radius:50px;
+box-shadow:0 10px 30px rgba(37,211,102,.3);">
+WhatsApp арқылы жазу
+</a>
 
 </section>
 
@@ -270,34 +335,4 @@ updateTimer();
 setInterval(updateTimer,1000);
 
 function toggleMusic(){
-const music = document.getElementById("music");
-
-if(music.paused){
-music.play();
-}else{
-music.pause();
-}
-}
-
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-});
-});
-
-document.querySelectorAll(".fade").forEach(el=>{
-observer.observe(el);
-});
-
-setTimeout(()=>{
-window.scrollBy({
-top:window.innerHeight,
-behavior:"smooth"
-});
-},4000);
-</script>
-
-</body>
-</html>
+const music = document.getElementById("
