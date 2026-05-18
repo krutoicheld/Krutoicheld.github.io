@@ -3,313 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Тойға шақыру</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
-
 body{
-font-family:'Cormorant Garamond', serif;
-background:#faf6ef;
+margin:0;
+font-family:Arial,sans-serif;
+background:#f8f3ea;
+text-align:center;
+color:#5a4320;
 overflow-x:hidden;
-color:#3a2d1f;
 }
 
 .hero{
 height:100vh;
 display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
-text-align:center;
-flex-direction:column;
 padding:20px;
-position:relative;
-background:
-linear-gradient(rgba(255,248,235,.45),rgba(255,248,235,.65)),
-url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1400');
+background:linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.5)),
+url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200');
 background-size:cover;
 background-position:center;
 }
 
-.hero::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-backdrop-filter:blur(2px);
-}
-
-.content{
-position:relative;
-z-index:2;
-animation:fadeUp 2s ease;
-}
-
-.pattern{
-font-size:28px;
-color:#b78d47;
-letter-spacing:4px;
-}
-
-.main-title{
-font-family:'Great Vibes', cursive;
-font-size:78px;
-color:#af823c;
-margin-top:20px;
+h1{
+font-size:55px;
+color:#b58a3a;
 }
 
 .subtitle{
-font-size:28px;
-margin-top:20px;
-max-width:350px;
-line-height:1.7;
+font-size:24px;
+max-width:330px;
+line-height:1.5;
 }
 
-.open-btn{
+.button{
 display:inline-block;
-margin-top:35px;
-padding:18px 42px;
-background:linear-gradient(to right,#c8a15a,#a67c37);
+margin-top:25px;
+padding:15px 35px;
+background:#b58a3a;
 color:white;
 text-decoration:none;
-border-radius:60px;
-font-size:24px;
-box-shadow:0 10px 35px rgba(183,141,71,.35);
-}
-
-.scroll{
-position:absolute;
-bottom:25px;
-font-size:38px;
-color:#af823c;
-animation:bounce 2s infinite;
+border-radius:40px;
+font-size:22px;
 }
 
 .section{
-padding:90px 20px;
-text-align:center;
-}
-
-.title{
-font-size:58px;
-color:#af823c;
-margin-bottom:20px;
-}
-
-.text{
-font-size:28px;
-line-height:1.9;
-max-width:800px;
-margin:auto;
+padding:80px 20px;
 }
 
 .card{
 background:white;
-padding:35px;
-border-radius:40px;
-max-width:370px;
-margin:40px auto;
-box-shadow:0 15px 45px rgba(0,0,0,.08);
-}
-
-.photo{
-width:92%;
-max-width:380px;
-border-radius:35px;
-margin-top:35px;
-box-shadow:0 15px 45px rgba(0,0,0,.15);
+padding:30px;
+border-radius:30px;
+max-width:350px;
+margin:auto;
+box-shadow:0 5px 25px rgba(0,0,0,.1);
 }
 
 .timer{
-font-size:34px;
-color:#af823c;
+font-size:28px;
 margin-top:20px;
+color:#b58a3a;
 font-weight:bold;
 }
 
-.info{
-font-size:28px;
-line-height:2;
-margin-top:20px;
+.photo{
+width:90%;
+max-width:350px;
+border-radius:25px;
+margin-top:25px;
 }
 
-.fade{
-opacity:0;
-transform:translateY(60px);
-transition:1.2s;
-}
-
-.fade.show{
-opacity:1;
-transform:translateY(0);
-}
-
-.music-btn{
+.music{
 position:fixed;
 top:20px;
 right:20px;
-z-index:999;
-background:#b78d47;
-color:white;
 border:none;
-padding:14px 18px;
-border-radius:50px;
+background:#b58a3a;
+color:white;
+padding:12px 18px;
+border-radius:30px;
 font-size:18px;
-box-shadow:0 8px 25px rgba(0,0,0,.15);
-}
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(50px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-@keyframes bounce{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(12px);}
 }
 </style>
 </head>
 
 <body>
 
-<button class="music-btn" onclick="toggleMusic()">
-🎵 Әуен
-</button>
+<button class="music" onclick="toggleMusic()">🎵 Музыка</button>
 
 <section class="hero">
-
-<div class="content">
-
-<div class="pattern">
-✦ ҚАЗАҚЫ ТОЙ ✦
-</div>
-
-<h1 class="main-title">
-Ахмад & Амина
-</h1>
-
+<h1>Ахмад & Амина</h1>
 <p class="subtitle">
 Сіздерді біздің қуанышымызға ортақ болуға шақырамыз ✨
 </p>
 
-<a href="#invite" class="open-btn">
+<a href="#invite" class="button">
 Шақыруды ашу
 </a>
-
-</div>
-
-<div class="scroll">
-⌄
-</div>
-
 </section>
 
-<section class="section fade" id="invite">
-
-<h2 class="title">
-Құрметті қонақтар
-</h2>
-
-<p class="text">
-Біздің өміріміздегі ерекше күннің куәсі болуға шақырамыз. Сіздердің келгендеріңіз біз үшін үлкен қуаныш болады 🤍
-</p>
-
-<img class="photo"
-src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=1400">
+<section class="section" id="invite">
 
 <div class="card">
+<h2>Той уақыты</h2>
 
-<h2 class="title">
-Той күні
-</h2>
+<div id="timer" class="timer"></div>
 
-<div class="timer" id="timer"></div>
-
-<div class="info">
+<p>
 📅 25 Тамыз 2026<br>
 🕐 18:00<br>
 📍 Алматы
-</div>
-
-</div>
-</section><section class="section fade">
-
-<h2 class="title">
-Той өтетін орын
-</h2>
-
-<p class="text">
-«Grand Hall» мейрамханасы<br>
-Алматы қаласы
 </p>
-
-<div style="margin-top:35px;">
-<iframe
-src="https://maps.google.com/maps?q=Almaty&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="92%"
-height="320"
-style="border:0;border-radius:35px;
-box-shadow:0 12px 35px rgba(0,0,0,.12);">
-</iframe>
 </div>
-
-</section>
-
-<section class="section fade">
-
-<h2 class="title">
-Естелік сәттер ✨
-</h2>
-
-<p class="text">
-Бұл күн жүрегімізде мәңгі сақталады.
-Сізбен бірге болғанымызға қуаныштымыз 🤍
-</p>
 
 <img class="photo"
-src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1400">
-
-</section>
-
-<section class="section fade">
-
-<h2 class="title">
-Қатысатыныңызды растаңыз
-</h2>
-
-<p class="text">
-Сізді асыға күтеміз 💛
-</p>
-
-<a href="https://wa.me/77000000000"
-style="
-display:inline-block;
-margin-top:25px;
-padding:18px 36px;
-background:#25D366;
-color:white;
-text-decoration:none;
-font-size:24px;
-border-radius:50px;
-box-shadow:0 10px 30px rgba(37,211,102,.3);">
-WhatsApp арқылы жазу
-</a>
+src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=1200">
 
 </section>
 
@@ -335,4 +147,15 @@ updateTimer();
 setInterval(updateTimer,1000);
 
 function toggleMusic(){
-const music = document.getElementById("
+const music=document.getElementById("music");
+
+if(music.paused){
+music.play();
+}else{
+music.pause();
+}
+}
+</script>
+
+</body>
+</html>
